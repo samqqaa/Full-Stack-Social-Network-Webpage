@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+		
+	<head>
+		<title>Form Processor</title>
+		<meta charset=“utf-8”>
+		<meta name="author" content="Sam Wang">
+
+	</head>
+
+	<body onload ="findAllData()">
+
+		<h1>Registration Data</h1><br/>
+
+		<table>
+			<tr><th>Account Name: </th><td id="accountname"></td></tr>
+			<tr><th>Display Name: </th><td id="displayname"></td></tr>
+			<tr><th>Email Address: </th><td id="emailaddress"></td></tr>
+			<tr><th>Phone Number: </th><td id="phonenumber"></td></tr>
+			<tr><th>Date of birth: </th><td id="dob"></td></tr>
+			<tr><th>Zipcode: </th><td id="zipcode"></td></tr>
+			<tr><th>Password: </th><td id="pswd"></td> </tr>
+			<tr><th>Comfirm Password: </th><td id="cpswd"></td> </tr>
+			<tr><th>Timestamp</th><td id="timestamp"></td></tr>
+		</table>
+	</body>
+
+	<script type="text/javascript">
+
+		function findAllData(){
+			var address = location.search.substring(1)
+			var data = address.split("&")
+			for(var i = 0; i < data.length; i++){
+				data[i] = data[i].substring(data[i].indexOf("=")+1)
+			}
+			data[2] = data[2].replace("%40","@")
+			document.getElementById("accountname").innerHTML = data[0];
+			document.getElementById("displayname").innerHTML = data[1];
+			document.getElementById("emailaddress").innerHTML = data[2];
+			document.getElementById("phonenumber").innerHTML = data[3];
+			document.getElementById("dob").innerHTML = data[4];
+			document.getElementById("zipcode").innerHTML = data[5];
+			document.getElementById("pswd").innerHTML = data[6];
+			document.getElementById("cpswd").innerHTML = data[7];
+			document.getElementById("timestamp").innerHTML = Date(data[8]);
+		}
+	</script>
+</html>
