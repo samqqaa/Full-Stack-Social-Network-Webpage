@@ -62,7 +62,7 @@ var createApp = function(canvas) {
 	c.fill()
 //move sun
 	sx += 2
-	if (sx-30 >= canvas.width){
+	if (sx-40 >= canvas.width){
 		sx = 0
 	}
 //print building and blink
