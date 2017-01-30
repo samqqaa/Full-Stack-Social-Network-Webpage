@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<title>Homework 1</title>
+		<meta charset=“utf-8”>
+		<meta name="author" content="Sam Wang">
+	</head>
+
+	<body onload ="starttimestamp()">
+		<h1>Registration Page</h1><br/>
+		<form method=("GET") action=formProcessor.html id="theForm">
+
+			<b>Account Name: </b><input type="text" name="accountname" placeholder = "must not start with numbers" required pattern="[A-Za-z][A-Za-z0-9]*"> <br>
+			<b>Display Name: (Optional) </b><input type="text" name="displayname" placeholder = "display name" required pattern="[A-Za-z0-9]*"> <br>
+			<b>Email Address: </b><input type="text" name="emailaddress" placeholder = "your email" required pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"> <br>
+			<b>Phone Number: </b><em>123-456-7890 </em> <input type="text" name="fnumber" placeholder = "xxx-xxx-xxxx" required pattern ="\d{3}[\-]\d{3}[\-]\d{4}"> <br>
+			<b>Date of Birth: </b><input type="text" name="dob" placeholder = "mm-dd-yyyy" required pattern ="\d{2}[\-]\d{2}[\-]\d{4}"> <br>
+			<b>Zipcode: </b><input type="text" name="zipcode" placeholder = "xxxxx" required pattern ="\d{5}"> <br>
+			<b>Password: </b><input type="password" name="pswd" id="pass" placeholder = "your password" required> <br>
+			<b>Comfirm Password: </b><input type="password" name="cpswd" id="passc" placeholder = "comfirm password" required> <br>
+			<input type="hidden" name="timeStamp" id="hiddentimestamp"> 
+			<input type="submit" value = "Apply" onclick="return validation()">
+			<input type="reset" value ="Clear">
+
+		</form>
+	</body>
+
+	<script type="text/javascript">
+		function starttimestamp(){
+			var n = Date.now()
+			document.getElementById("hiddentimestamp").value = n
+		}
+		function validation(){
+			var today = new Date
+			var pswd = document.getElementById("pass").value
+			var cpswd = document.getElementById("passc").value
+			var birthday = document.getElementsByName("dob")[0].value
+			var birthyear = birthday.substring(6,10)
+			var birthmonth = birthday.substring(0,2)
+			var birthdate = birthday.substring(3,5)
+			
+			if(pswd !== cpswd){
+				alert("Please Comfirm Password!")
+				return false
+			}
+			else if(birthmonth>12||birthmonth<1){
+				alert("Birth Month Invalid")
+				return false			
+			}
+			else if(birthdate>31||birthdate<1){
+				alert("Birth Date Invalid")
+				return false			
+			}
+			else if(birthyear>today.getFullYear()-18 || (birthyear==today.getFullYear()-18 && birthmonth > today.getMonth()+1) || (birthyear==today.getFullYear()-18 && birthmonth == today.getMonth()+1 && birthdate > today.getDate())){
+				alert("You are not yet 18!")
+				return false
+			}
+			else{
+				return true
+			}
+		}
+	</script>
+</html>
