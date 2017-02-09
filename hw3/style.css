@@ -1,0 +1,32 @@
+/*heading font*/
+h1   {color: blue; font-size:50px;}
+/*div font */
+div.relative {
+    color:red;
+    position: relative;
+    width: 300px;
+    left: 200px;  
+    height: 50px;
+    font-size: 40px;
+
+
+}
+div.absolute {
+    color:grey;
+    position: relative;
+    width: 300px;
+    left: 800px;  
+    height: 50px;
+    font-size: 30px;
+} 
+/*different button */
+.button {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 1.5px 3px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+}
