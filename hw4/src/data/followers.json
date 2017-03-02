@@ -1,0 +1,20 @@
+{"followings":[{
+    "name": "Tiffany",
+    "image": "http://cdn.cultofmac.com/wp-content/uploads/2015/11/face_with_tears_of_joy.png",
+    "status": "Redux is amazing!",
+    "id":0
+    },
+    {
+    "name": "Samantha",
+    "image": "https://pbs.twimg.com/profile_images/541920956449435651/iHq9_qcq.png",
+    "status": "React is so much fun!",
+    "id":1
+    },
+    {
+    "name": "Vivian",
+    "image": "http://cdn.shopify.com/s/files/1/1061/1924/products/Emoji_Icon_-_unamused_face_grande.png?v=1485573436",
+    "status": "They are all lying...",
+    "id":2
+    }
+
+]}

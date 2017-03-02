@@ -1,0 +1,14 @@
+{
+	"location": "Main",
+    "userList": [
+	    {"id": 1, "name": "Samantha", "password": "123"},
+	    {"id": 2, "name": "Tiffany", "password": "123"},
+	    {"id": 3, "name": "Jonathan", "password": "123"}
+	],
+	"user":{
+		"id":0,
+		"name": "Sam",
+		"password":123,
+		"img":"http://logok.org/wp-content/uploads/2014/07/MSN-logo-butterfly.png"
+	}
+}
