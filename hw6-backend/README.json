@@ -1,0 +1,6 @@
+
+{ 
+     "netid": "hw22",
+  "frontend": "https://riceboook.surge.sh",
+   "backend": "https://riceboookserver.herokuapp.com"
+}
