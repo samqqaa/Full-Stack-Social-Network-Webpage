@@ -123,6 +123,5 @@ module.exports = (app) => {
 	app.get('/zipcode/:user?', getZipcodes)
 	app.put('/zipcode', putZipcode)
 	app.get('/avatars/:user?', getAvatars)
-	app.put('/avatar', putAvatar)  
-	app.put('/avatar', uploadImage('avatar'), uploadAvatar)      
+	app.put('/avatar', uploadImage('avatar'), putAvatar)      
 }
